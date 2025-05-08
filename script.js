@@ -50,4 +50,22 @@ function operate() {
     }
 }
 
-operate()
+let currentNumber = "";
+
+function pressDigit(digit) {
+    // Avoid leading zeros
+    if (currentNumber === "0") {
+        currentNumber = digit;
+    } else {
+        currentNumber += digit;
+    }
+    updateDisplay();
+}
+
+function updateDisplay() {
+    document.querySelector(".display").textContent = currentNumber || "0";
+}
+
+function clearDisplay() {
+    document.querySelector(".display").textContent = currentNumber || "0";
+}
